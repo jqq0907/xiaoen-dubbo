@@ -1,0 +1,15 @@
+dubbo:
+  registry:
+    address: nacos://10.0.0.3:8848?namespace=c3dcb2d2-e8ed-4f6e-92b0-4b50b32ad2ec
+  application:
+    name: ${spring.application.name}
+  config-center:
+    address: nacos://10.0.0.3:8848
+    protocol: nacos
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.example.remote
+  metadata-report:
+    address: nacos://10.0.0.3:8848?namespace=c3dcb2d2-e8ed-4f6e-92b0-4b50b32ad2ec

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: dubbo-service
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 10010
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: nacos://10.0.0.3:8848?namespace=c3dcb2d2-e8ed-4f6e-92b0-4b50b32ad2ec
+  protocol:
+    name: dubbo
+    port: 20881
+  scan:
+    base-packages: com.example

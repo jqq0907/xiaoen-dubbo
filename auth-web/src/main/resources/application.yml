@@ -1,0 +1,39 @@
+dubbo:
+  registry:
+    address: nacos://10.0.0.3:8848?namespace=c3dcb2d2-e8ed-4f6e-92b0-4b50b32ad2ec
+  application:
+    name: ${spring.application.name}
+  config-center:
+    address: nacos://10.0.0.3:8848
+    protocol: nacos
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.example.remote
+  metadata-report:
+    address: nacos://10.0.0.3:8848?namespace=c3dcb2d2-e8ed-4f6e-92b0-4b50b32ad2ec
+management:
+  endpoint:
+    health:
+      show-details: always
+spring:
+  application:
+    name: auth-web
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: 10.0.0.3
+    port: 6370
+logging:
+  level:
+    com: debug
+#jwt
+jwt:
+  header: Authorization
+  #
+  token-start-with: Bearer
+  secret-key: cXdxcXd3d3d3d3d3d3d3cWRxd2Vxd2Vxd2Vxd2VxMTIzaDEyM2gyMTEyMw
+  expiration: 1200000
+server:
+  port: 8000
